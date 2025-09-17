@@ -5,5 +5,5 @@ YouTube: 19.47.53
 Install [MicroG](https://github.com/WSTxda/MicroG-RE/releases) to be able to use non-root YouTube or YouTube-Music.  
 Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music.  
 CLI: j-hc/revanced-cli-5.0.0-all.jar  
-Patches: inotia00/patches-5.10.1.rvp  
-[Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v5.10.1)  
+Patches: inotia00/patches-5.11.1.rvp  
+[Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v5.11.1)  
