@@ -1,31 +1,48 @@
-enable-magisk-update = true   # set this to false if you do not want to receive updates for the module in magisk app
+enable-magisk-update = true  # set false to disable module updates in Magisk app
 patches-source = "inotia00/revanced-patches"
 rv-brand = "ReVanced eXtended"
 parallel-jobs = 1
 
-# add 'enabled = false' for not patching a specific app or remove it from the config
-# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
+# To skip patching an app, either remove its section or add: enabled = false
+# Detailed explanations: https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md
 
-# you can use rvmm-config-gen to generate a config
-
+# ──────────────────────────────
+# YouTube
+# ──────────────────────────────
 [YouTube]
-build-mode = "both"                                                   
-excluded-patches = ""
-included-patches = ""
-patcher-args = " -d 'Custom branding icon for YouTube' -d 'Custom branding name for YouTube' -d 'Hide shortcuts' -e 'GmsCore support' -e 'Settings for YouTube' -OrvxSettingsLabel='ReVanced Extended' -d 'Enable debug logging' "
-version = "auto"                                                      
-exclusive-patches = false                                             
+build-mode = "both"
+version = "auto"
+exclusive-patches = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 module-prop-name = "yt-rvx"
+excluded-patches = ""
+included-patches = ""
+patcher-args = """
+-d 'Custom branding icon for YouTube'
+-d 'Custom branding name for YouTube'
+-d 'Hide shortcuts'
+-d 'Enable debug logging'
+-e 'GmsCore support'
+-e 'Settings for YouTube'
+-OrvxSettingsLabel='Customisation'
+"""
 
+# ──────────────────────────────
+# YouTube Music
+# ──────────────────────────────
 [Music]
 arch = "both"
 build-mode = "both"
-app-name = "YouTube-Music"
-excluded-patches = ""
-included-patches = ""
-patcher-args = " -d 'Custom branding icon for YouTube Music' -d 'Custom branding name for YouTube Music' -e 'GmsCore support' -e 'Settings for YouTube Music' -OrvxSettingsLabel='ReVanced Extended' "
 version = "auto"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytm-rvx"
-
+app-name = "YouTube-Music"
+excluded-patches = ""
+included-patches = ""
+patcher-args = """
+-d 'Custom branding icon for YouTube Music'
+-d 'Custom branding name for YouTube Music'
+-e 'GmsCore support'
+-e 'Settings for YouTube Music'
+-OrvxSettingsLabel='Customisation'
+"""
