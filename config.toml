@@ -1,5 +1,5 @@
 enable-magisk-update = true  # set false to disable module updates in Magisk app
-patches-source = "inotia00/revanced-patches"
+patches-source = "anddea/revanced-patches"
 rv-brand = "ReVanced eXtended"
 parallel-jobs = 1
 
