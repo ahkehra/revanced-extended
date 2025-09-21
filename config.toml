@@ -11,7 +11,7 @@ parallel-jobs = 1
 # ──────────────────────────────
 [YouTube]
 build-mode = "both"
-version = "auto"
+version = "20.21.37"
 exclusive-patches = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 module-prop-name = "yt-rvx"
@@ -23,6 +23,7 @@ patcher-args = """
 -d 'Hide shortcuts'
 -d 'Enable debug logging'
 -e 'GmsCore support'
+--package-name='com.rvx.android.youtube'
 -e 'Settings for YouTube'
 -OrvxSettingsLabel='Customisation'
 """
@@ -33,7 +34,7 @@ patcher-args = """
 [Music]
 arch = "both"
 build-mode = "both"
-version = "auto"
+version = "8.30.54"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytm-rvx"
 app-name = "YouTube-Music"
@@ -43,6 +44,7 @@ patcher-args = """
 -d 'Custom branding icon for YouTube Music'
 -d 'Custom branding name for YouTube Music'
 -e 'GmsCore support'
+--package-name='com.rvx.android.apps.youtube.music'
 -e 'Settings for YouTube Music'
 -OrvxSettingsLabel='Customisation'
 """
