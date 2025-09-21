@@ -17,7 +17,7 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
 module-prop-name = "yt-rvx"
 excluded-patches = ""
 included-patches = ""
-patcher-args = " -d 'Custom branding icon for YouTube' -d 'Custom branding name for YouTube' -d 'Hide shortcuts' -d 'Enable debug logging' -e 'Settings for YouTube' -OrvxSettingsLabel='Customisation' -e packageNameYouTube='com.rvx.android.youtube' -e 'GmsCore support' "
+patcher-args = " -d 'Custom branding icon for YouTube' -d 'Custom branding name for YouTube' -e 'GmsCore support' -d 'Hide shortcuts' -d 'Enable debug logging' -e 'Settings for YouTube' -OrvxSettingsLabel='Customisation' -e 'Package name of YouTube' -OpackageNameYouTube='com.rvx.android.youtube' "
 
 # ──────────────────────────────
 # YouTube Music
@@ -31,4 +31,4 @@ module-prop-name = "ytm-rvx"
 app-name = "YouTube-Music"
 excluded-patches = ""
 included-patches = ""
-patcher-args = " -d 'Custom branding icon for YouTube Music' -d 'Custom branding name for YouTube Music' -e 'Settings for YouTube Music' -OrvxSettingsLabel='Customisation' -e packageNameYouTubeMusic='com.rvx.android.apps.youtube.music' -e 'GmsCore support' "
+patcher-args = " -d 'Custom branding icon for YouTube Music' -d 'Custom branding name for YouTube Music' -e 'Settings for YouTube Music' -OrvxSettingsLabel='Customisation' -e 'Package name of YouTube Music' -OpackageNameYouTubeMusic='com.rvx.android.apps.youtube.music' "
