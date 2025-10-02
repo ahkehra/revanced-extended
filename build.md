@@ -1,9 +1,10 @@
 Music (arm64-v8a): 8.30.54  
 Music (arm-v7a): 8.30.54  
-YouTube: 19.47.53  
+Spotify: 9.0.76.1115  
+YouTube: 20.21.37  
 
 Install [MicroG](https://github.com/WSTxda/MicroG-RE/releases) to be able to use non-root YouTube or YouTube-Music.  
 Use [zygisk-detach](https://github.com/j-hc/zygisk-detach) to block Play Store from updating YouTube and YouTube-Music.  
 CLI: j-hc/revanced-cli-5.0.0-all.jar  
-Patches: inotia00/patches-5.11.1.rvp  
-[Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v5.11.1)  
+Patches: anddea/patches-3.14.0-dev.7.rvp  
+[Changelog](https://github.com/anddea/revanced-patches/releases/tag/v3.14.0-dev.7)  
