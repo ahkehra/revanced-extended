@@ -6,9 +6,6 @@ parallel-jobs = 1
 # To skip patching an app, either remove its section or add: enabled = false
 # Detailed explanations: https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md
 
-# ──────────────────────────────
-# YouTube
-# ──────────────────────────────
 [YouTube]
 build-mode = "both"
 version = "20.21.37"
@@ -19,9 +16,6 @@ excluded-patches = ""
 included-patches = ""
 patcher-args = " -d 'Custom branding icon for YouTube' -d 'Custom branding name for YouTube' -e 'GmsCore support' -d 'Hide shortcuts' -d 'Enable debug logging' -e 'Settings for YouTube' -OrvxSettingsLabel='Customisation' -e 'Package name of YouTube' -OpackageNameYouTube='com.rvx.android.youtube' "
 
-# ──────────────────────────────
-# YouTube Music
-# ──────────────────────────────
 [Music]
 arch = "both"
 build-mode = "both"
@@ -32,3 +26,8 @@ app-name = "YouTube-Music"
 excluded-patches = ""
 included-patches = ""
 patcher-args = " -d 'Custom branding icon for YouTube Music' -d 'Custom branding name for YouTube Music' -e 'Settings for YouTube Music' -OrvxSettingsLabel='Customisation' -e 'Package name of YouTube Music' -OpackageNameYouTubeMusic='com.rvx.android.apps.youtube.music' "
+
+[Spotify]
+enabled = true
+uptodown-dlurl = "https://spotify.en.uptodown.com/android"
+archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.spotify.music"
