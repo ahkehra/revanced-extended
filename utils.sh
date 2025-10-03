@@ -62,18 +62,21 @@ get_rv_prebuilts() {
 		local dir=${src%/*}
 		dir=${TEMP_DIR}/${dir,,}-rv
 		[ -d "$dir" ] || mkdir "$dir"
-
-		local rv_rel="https://api.github.com/repos/${src}/releases" name_ver
-		if [ "$ver" = "dev" ]; then
-			name_ver="*-dev*"
-		elif [ "$ver" = "latest" ]; then
-			rv_rel+="/latest"
-			name_ver="*"
-		else
-			rv_rel+="/tags/${ver}"
-			name_ver="$ver"
-		fi
-
+		local rv_rel="https://api.github.com/repos/${src}/releases"
+		local name_ver
+		case "$ver" in
+            dev)
+                name_ver="*-dev*"
+                ;;
+            latest|"")
+                rv_rel+="/latest"
+                name_ver="*"
+                ;;
+            *)
+                rv_rel+="/tags/${ver}"
+                name_ver="$ver"
+                ;;
+		esac
 		local url file tag_name name
 		file=$(find "$dir" -name "${fprefix}-${name_ver#v}.${ext}" -type f 2>/dev/null)
 		if [ -z "$file" ]; then
