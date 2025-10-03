@@ -1,32 +1,57 @@
 name: Build Modules
-on:
-  workflow_call:
-    inputs:
-      from_ci:
-        type: boolean
-        required: false
-        default: true
 
+on:
   workflow_dispatch:
+  push:
+    branches:
+      - autobuild
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
 
 jobs:
   run:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-java@v4
-        with:
-          distribution: "zulu"
-          java-version: "17"
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: true
 
+      - name: Check upstream latest release (including pre-release)
+        id: upstream
+        run: |
+          API="https://api.github.com/repos/anddea/revanced-patches/releases"
+          FIRST_RELEASE=$(curl -s $API | jq -r '.[0].tag_name')
+          echo "UPSTREAM_LATEST=$FIRST_RELEASE" >> $GITHUB_OUTPUT
+          echo "Latest upstream release (first in list, pre or normal): $FIRST_RELEASE"
+
+      - name: Skip if already built latest
+        if: github.event_name != 'workflow_dispatch'
+        run: |
+          LAST=$(cat last_build.txt 2>/dev/null || echo "none")
+          echo "Last build: $LAST"
+          if [ "$LAST" = "${{ steps.upstream.outputs.UPSTREAM_LATEST }}" ]; then
+            echo "No new upstream release. Exiting."
+            exit 0
+          fi
+
+      - name: Save current release tag
+        run: |
+          echo "${{ steps.upstream.outputs.UPSTREAM_LATEST }}" > last_build.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add last_build.txt
+          git commit -m "Update last build tag" || echo "No changes"
+          git push || true
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: "17"
+
       - name: Update config
-        if: ${{ inputs.from_ci }}
         run: |
           if git checkout origin/update build.md; then
             UPDATE_CFG=$(./build.sh config.toml --config-update)
