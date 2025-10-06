@@ -64,6 +64,9 @@ get_rv_prebuilts() {
 		[ -d "$dir" ] || mkdir "$dir"
 
 		local rv_rel="https://api.github.com/repos/${src}/releases" name_ver
+		if [ -z "$ver" ]; then
+			ver=$(curl -s "$rv_rel" | jq -r '.[0].tag_name')
+		fi
 		if [ "$ver" = "dev" ]; then
 			name_ver="*-dev*"
 		elif [ "$ver" = "latest" ]; then
