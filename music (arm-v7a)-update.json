@@ -1,6 +1,6 @@
 {
-  "version": "v8.30.54 (patches: 3.15.0)",
-  "versionCode": 8,
-  "zipUrl": "https://github.com/ahkehra/revanced-extended/releases/download/8/youtube-music-revanced-extended-magisk-v8.30.54-arm-v7a.zip",
+  "version": "v8.30.54 (patches: 3.16.0)",
+  "versionCode": 9,
+  "zipUrl": "https://github.com/ahkehra/revanced-extended/releases/download/9/youtube-music-revanced-extended-magisk-v8.30.54-arm-v7a.zip",
   "changelog": "https://raw.githubusercontent.com/ahkehra/revanced-extended/update/build.md"
 }
