@@ -26,7 +26,3 @@ app-name = "YouTube-Music"
 excluded-patches = ""
 included-patches = ""
 patcher-args = " -d 'Custom branding icon for YouTube Music' -d 'Custom branding name for YouTube Music' -e 'Settings for YouTube Music' -OrvxSettingsLabel='Customisation' -e 'Package name of YouTube Music' -OpackageNameYouTubeMusic='com.rvx.android.apps.youtube.music' "
-
-[Spotify]
-enabled = true
-uptodown-dlurl = "https://spotify.en.uptodown.com/android"
