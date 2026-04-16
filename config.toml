@@ -7,40 +7,33 @@ parallel-jobs = 1
 # you can use rvmm-config-gen to generate a config
 
 [YouTube]
-build-mode = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
-
-[YouTube-Morphe]
-app-name = "YouTube"
 patches-source = "MorpheApp/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
+app-name = "YouTube"
 rv-brand = "Morphe"
 build-mode = "both"
+version = "21.15.282"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
+module-prop-name = "yt"
+patcher-args = " -d 'Custom branding icon for YouTube' -d 'Custom branding name for YouTube' -e 'GmsCore support' -d 'Hide shortcuts' -d 'Enable debug logging' -e 'Settings for YouTube' -OrvxSettingsLabel='Customisation' -e 'Package name of YouTube' -OpackageNameYouTube='com.android.youtube' "
 
 [Music]
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
-
-[Music-Morphe]
-app-name = "Music"
 patches-source = "MorpheApp/morphe-patches"
 cli-source = "MorpheApp/morphe-cli"
+app-name = "YouTube Music"
 rv-brand = "Morphe"
 build-mode = "both"
+version = "9.15.50"
 arch = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
+module-prop-name = "ytm"
+patcher-args = " -d 'Custom branding icon for YouTube Music' -d 'Custom branding name for YouTube Music' -e 'Settings for YouTube Music' -OrvxSettingsLabel='Customisation' -e 'Package name of YouTube Music' -OpackageNameYouTubeMusic='com.rvx.android.apps.youtube.music' "
 
-[Reddit-Morphe]
+[Reddit]
 app-name = "Reddit"
 rv-brand = "Morphe"
 build-mode = "both"
